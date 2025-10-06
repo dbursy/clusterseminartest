@@ -1,0 +1,103 @@
+/* General */
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --card: #fafafa;
+  --muted: #777777;
+  --accent: #2d8cff;
+  --accent-dark: #66aaff;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 1.5rem 4rem;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+body.dark-mode {
+  --bg: #121212;
+  --text: #e6e6e6;
+  --card: #1f1f1f;
+  --muted: #9a9a9a;
+  --accent: #66aaff;
+}
+h1 { text-align:center; margin: 2rem 0; font-size: 2rem; }
+.location-news {
+  background: #f5f8ff;
+  padding: 1rem 1.25rem;
+  border-left: 6px solid var(--accent);
+  border-radius: 8px;
+  margin: 1rem 0;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+body.dark-mode .location-news {
+  background: #18283a;
+  border-left-color: var(--accent);
+}
+.location-news h2 { margin-top: 0; }
+.location-news a { color: var(--accent); text-decoration: underline; }
+body.dark-mode .location-news a { color: var(--accent); }
+
+/* Semesters / details */
+details { margin-top: 1rem; }
+summary {
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.6rem 0.4rem;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Entries (cards) */
+.seminar-entry {
+  background: var(--card);
+  padding: 0.9rem 1.2rem;
+  margin: 0.9rem 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease, opacity 0.3s;
+}
+body.dark-mode .seminar-entry {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+/* Status */
+.seminar-status { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
+.past { opacity: 0.65; border-left: 6px solid #999999; }
+.upcoming { border-left: 6px solid var(--accent); background: #f0f8ff; }
+body.dark-mode .upcoming { background: rgba(34,66,100,0.12); }
+
+/* Abstract read more */
+.abstract { margin: 0.5rem 0; color: inherit; }
+.abstract .more-text { display: none; }
+.abstract.expanded .dots { display: none; }
+.abstract.expanded .more-text { display: inline; }
+.read-more-btn { color: var(--accent); cursor: pointer; font-size: 0.92rem; margin-left:6px; }
+body.dark-mode .read-more-btn { color: var(--accent); }
+
+/* Dark toggle */
+.dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #f0f0f0;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 9999;
+}
+body.dark-mode .dark-toggle { background: #333333; color: #fff; }
+
+/* AddEvent small adjustments */
+.addeventatc { margin-top: 0.6rem; display:inline-block; }
+
+/* Responsive */
+@media (max-width:600px) {
+  body { padding: 0 1rem 4rem; }
+  .seminar-entry { padding: 0.8rem; }
+}

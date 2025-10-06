@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cluster Seminar at DIW Berlin</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css" />
+
+<!-- AddEvent CSS (theme will switch via JS) -->
+<link id="addevent-theme" rel="stylesheet"
+      href="https://cdn.addevent.com/libs/atc/themes/fff-theme-1/theme.css"
+      type="text/css" media="all" />
+
+</head>
+<body>
+
+<button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
+<h1>Cluster Seminar at DIW Berlin</h1>
+
+<!-- Location and News Section -->
+<section class="location-news">
+  <h2>Location and News</h2>
+  <p>
+    All abstracts and locations will be shared via our mailing list. If you want to attend a specific session or receive the mailing list in the future, write a short mail to
+    <a href="mailto:aantezza@diw.de">aantezza@diw.de</a> and
+    <a href="mailto:dbursy@diw.de">dbursy@diw.de</a>. Note that the dates and speakers are subject to change.
+  </p>
+</section>
+
+<!-- Placeholder where the semester details will be injected -->
+<div id="seminars-root" class="seminars-root">
+  <!-- JS will populate semesters here from seminars.xlsx -->
+  <p style="opacity:.6; font-size:.95rem;">Loading seminar schedule…</p>
+</div>
+
+<!-- Libraries -->
+<!-- SheetJS (xlsx) for reading .xlsx in browser -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<!-- AddEvent JS (kept here; script tag will be re-inserted to re-init dynamic buttons) -->
+<script id="addevent-script" type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+<!-- Your page script (loads seminars.xlsx, builds DOM) -->
+<script src="script.js"></script>
+
+</body>
+</html>
